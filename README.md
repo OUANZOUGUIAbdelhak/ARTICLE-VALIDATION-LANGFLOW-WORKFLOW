@@ -6,6 +6,10 @@ This repository contains a standardized workflow for evaluating the **relevance 
 
 ---
 
+<img width="1634" height="731" alt="Capture d’écran du 2025-07-28 10-06-34" src="https://github.com/user-attachments/assets/5dd9dc68-2779-4c7b-854c-f17bdc6b594d" />
+
+
+---
 ## 📌 Purpose
 
 To build a reliable and high-quality dataset, it is crucial to include only studies that provide **complete, quantitative, and standardized data**. This workflow ensures that only relevant data points are selected for machine learning applications by applying strict inclusion criteria.
