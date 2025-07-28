@@ -1,12 +1,10 @@
 
+<img width="1634" height="731" alt="image" src="https://github.com/user-attachments/assets/ffbeea7a-2236-4a99-b569-5f5526566165" />
+
 ````markdown
 # 🧪 Glass Dissolution Data Relevance Screening Workflow
 
 This repository contains a standardized workflow for evaluating the **relevance of scientific articles** for inclusion in a database aimed at **predicting the initial dissolution rate of glasses using machine learning**.
-
----
-
-<img width="1634" height="731" alt="image" src="https://github.com/user-attachments/assets/635b7a4b-80bd-4c0b-b666-db94ed9a0bd5" />
 
 
 ---
