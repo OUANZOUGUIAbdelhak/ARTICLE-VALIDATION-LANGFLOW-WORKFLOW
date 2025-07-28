@@ -1,55 +1,88 @@
-🧪 Glass Dissolution Data Relevance Screening Workflow
 
-This workflow is designed to systematically evaluate the relevance of scientific articles for inclusion in a machine learning database aimed at predicting the initial dissolution rate of glasses.
-🔍 Purpose
+````markdown
+# 🧪 Glass Dissolution Data Relevance Screening Workflow
 
-To build a high-quality dataset, each article must provide essential experimental information that can support accurate and consistent machine learning modeling. This screening workflow ensures only articles with complete, quantitative, and usable data are included.
-✅ Relevance Criteria
+This repository contains a standardized workflow for evaluating the **relevance of scientific articles** for inclusion in a database aimed at **predicting the initial dissolution rate of glasses using machine learning**.
 
-Each glass or experimental condition in an article is considered relevant only if all three of the following are explicitly provided:
+---
 
-    Complete Chemical Composition
+## 📌 Purpose
 
-        Given in weight percentages (e.g., SiO₂, B₂O₃, Na₂O, etc.)
+To build a reliable and high-quality dataset, it is crucial to include only studies that provide **complete, quantitative, and standardized data**. This workflow ensures that only relevant data points are selected for machine learning applications by applying strict inclusion criteria.
 
-        The sum must be close to 100% (±5%)
+---
 
-    Explicit Initial Dissolution Rate
+## ✅ Relevance Criteria
 
-        Provided as a numeric value with units (e.g., g·m⁻²·d⁻¹)
+Each glass or experimental condition reported in an article is considered **relevant** only if it meets **all three** of the following conditions:
 
-        Measured in initial (pre-saturation) conditions
+### 1. Complete Chemical Composition
+- Provided in weight percentages (e.g., SiO₂, B₂O₃, Na₂O, etc.)
+- The total composition must sum to approximately 100% (±5%)
+- Partial or incomplete compositions are not accepted
 
-        Normalized (e.g., by geometric or BET surface area), with method specified
+### 2. Explicit Initial Dissolution Rate
+- Must be provided as a numeric value with a clear unit (e.g., `g·m⁻²·d⁻¹`, `mg·m⁻²·h⁻¹`, etc.)
+- Measured under **initial conditions** (before saturation or the formation of alteration layers)
+- Must be **normalized** (e.g., by geometric or BET surface area), and the normalization method must be stated
+- Indirect values (e.g., from plots or calculated from slopes) are not accepted
 
-    At Least One Experimental Parameter
+### 3. At Least One Associated Experimental Parameter
+At least one of the following must be reported and clearly linked to the measured rate:
+- Initial pH
+- Test temperature
+- Solution volume
+- Specific surface area (BET or geometric, if powder)
+- Solution flow rate (for dynamic tests)
 
-        e.g., Initial pH, test temperature, solution volume, surface area, or flow rate
+---
 
-        Must be clearly linked to the dissolution rate measurement
+## 🚫 Exclusion Criteria
 
-🚫 Exclusion Criteria
+A data point is considered **not relevant** if **any** of the following conditions apply:
+- Composition is incomplete or does not sum to ~100%
+- Dissolution rate is missing, only shown in figures, lacks units, or normalization is not specified
+- No experimental parameter is reported in connection to the dissolution rate
 
-Articles (or individual datasets within articles) are excluded if any of the following apply:
+---
 
-    The composition is partial or does not sum to ~100%
+## 🧾 Evaluation Output Format
 
-    The dissolution rate is missing, only shown in graphs, or lacks units/normalization
+Each article is manually reviewed and the following summary format is used:
 
-    No experimental parameter is associated with the rate measurement
-
-📄 Evaluation Output Format
-
-Each article is reviewed and summarized using the following format:
-
+```txt
 1. Article relevance: [Yes/No]  
-2. Justification: [Brief explanation, e.g., which criteria are met or missing for each glass or condition]
+2. Justification: [Brief explanation referencing the three criteria]
+````
 
-Example:
+### ✅ Example (Relevant):
 
+```txt
 1. Article relevance: Yes  
-2. Justification: "For glass G0.40Nd4C, the article gives a complete composition (total = 99.99%), an explicit initial rate (V₀,Si = 0.8 g·m⁻²·d⁻¹, normalized to Sgeo), and the temperature (100 °C), so it is relevant."
+2. Justification: "For glass G0.40Nd4C, the article provides a full composition (total = 99.99%), an explicit initial rate (V₀,Si = 0.8 g·m⁻²·d⁻¹, normalized to Sgeo), and the temperature (100 °C), so it is relevant."
+```
 
-🛠 Usage
+### ❌ Example (Not Relevant):
 
-Use this workflow as a manual review protocol when extracting data from literature. It ensures consistency, objectivity, and alignment with the data quality requirements for modeling.
+```txt
+1. Article relevance: No  
+2. Justification: "The composition is provided (total = 99.99%) and pH is given (pH = 6), but the initial rate is not explicit—only curves are shown—so the dataset is not relevant."
+```
+
+---
+
+## 🛠 How to Use
+
+1. **Read** the full experimental section of each article.
+2. **Extract** and record:
+
+   * Composition (%)
+   * Explicit initial rate (with units and normalization)
+   * At least one linked experimental parameter
+3. **Apply** the criteria strictly—do not infer missing data.
+4. **Summarize** using the evaluation format above.
+
+This workflow is intended to **ensure data integrity and consistency** when compiling datasets for machine learning models.
+
+---
+
