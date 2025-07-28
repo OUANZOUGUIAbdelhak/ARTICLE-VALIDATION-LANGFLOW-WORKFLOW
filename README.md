@@ -6,7 +6,7 @@ This repository contains a standardized workflow for evaluating the **relevance 
 
 ---
 
-<img width="1634" height="731" alt="Capture d’écran du 2025-07-28 10-06-34" src="https://github.com/user-attachments/assets/5dd9dc68-2779-4c7b-854c-f17bdc6b594d" />
+<img width="1634" height="731" alt="Capture d’écran du 2025-07-28 10-06-34" src="https://github.com/user-attachments/assets/0e1b16c6-ed5e-4955-ba4d-c4cf3dd2683c" />
 
 
 ---
